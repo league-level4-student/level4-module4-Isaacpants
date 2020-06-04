@@ -1,13 +1,14 @@
-
 package _03_polymorphs;
 
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class MovingPolymorph extends Polymorph {
+public class FollowingPolymorph extends Polymorph{
+
+
 	private int width;
 	private int height;
-	int circlePos = 0;
+	
 
 	public int getWidth() {
 		return width;
@@ -25,7 +26,7 @@ public class MovingPolymorph extends Polymorph {
 		this.height = height;
 	}
 
-	MovingPolymorph(int x, int y, int width, int height) {
+	FollowingPolymorph(int x, int y, int width, int height) {
 		super(x, y);
 		this.height = height;
 		this.width = width;
@@ -35,16 +36,11 @@ public class MovingPolymorph extends Polymorph {
 	@Override
 	public void update() {
 		
-setX( (int) (getX()+Math.cos(circlePos)*100.0));
-
-setY( (int) (getY()+Math.sin(circlePos)*100.0));
-	circlePos++;
 	}
 
 	@Override
 	public void draw(Graphics g) {
-		g.setColor(Color.black);
+		g.setColor(Color.magenta);
 		g.fillRect(getX(), getY(), width, height);
 	}
-
 }
